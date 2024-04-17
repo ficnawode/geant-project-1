@@ -1,0 +1,27 @@
+/run/verbose 2
+/run/initialize
+/vis/open OGL
+/vis/sceneHandler/create OGL
+/vis/viewer/create ! ! 600x600-0+0
+/vis/viewer/refresh
+/vis/drawVolume
+/vis/scene/create
+/vis/scene/add/volume world -1 -1 none m 0 0 0 0 0 0
+/vis/sceneHandler/attach
+/vis/viewer/set/viewpointThetaPhi 120 150
+/vis/viewer/refresh
+/vis/viewer/set/style surface
+/vis/viewer/refresh
+/vis/scene/add/trajectories smooth
+/tracking/storeTrajectory 2
+/vis/scene/notifyHandlers
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/set 1 red
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByCharge-0/set -1 blue
+/vis/scene/notifyHandlers scene-0
+/vis/modeling/trajectories/drawByCharge-0/set 0 green
+/vis/scene/notifyHandlers scene-0
+/run/beamOn 1
+/analysis/h1/getVector
+/analysis/h2/getVector
