@@ -67,8 +67,8 @@ public:
 
   void ConstructSDandField() override;
 
-  const
-  G4VPhysicalVolume* GetEcal() const    {return fPhysiEcal;};
+  // const
+  // G4VPhysicalVolume* GetEcal() const    {return fPhysiEcal;};
   const G4Material* GetMaterial() const {return fMaterial;};
 
   // Subdivision of absorber
@@ -95,9 +95,13 @@ private:
   G4double fEcalLength = 0.;             //full length of the Calorimeter
   G4double fEcalRadius = 0.;             //radius  of the Calorimeter
 
-  G4Box*            fSolidEcal = nullptr;  //pointer to the solid calorimeter
-  G4LogicalVolume*   fLogicEcal = nullptr;  //pointer to the logical calorimeter
-  G4VPhysicalVolume* fPhysiEcal = nullptr;  //pointer to the physical calorimeter
+  G4Box*            fSolidWorld = nullptr;  //pointer to the solid calorimeter
+  G4LogicalVolume*   fLogicWorld = nullptr;  //pointer to the logical calorimeter
+  G4VPhysicalVolume* fPhysiWorld = nullptr;  //pointer to the physical calorimeter
+
+  G4Box*            fSolidAbsorber = nullptr;  
+  G4LogicalVolume*   fLogicAbsorber = nullptr;  
+  G4VPhysicalVolume* fPhysiAbsorber = nullptr;  
 
   DetectorMessenger* fDetectorMessenger = nullptr;  //pointer to the Messenger
 

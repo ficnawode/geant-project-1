@@ -11,7 +11,7 @@
 /run/verbose 1
 #/tracking/verbose 2
 #
-/testem/det/setMat G4_PbWO4
+/testem/det/setMat G4_AIR
 /testem/det/setLbin 40 0.5
 /testem/det/setRbin 50 0.1
 #

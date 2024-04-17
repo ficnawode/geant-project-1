@@ -1,4 +1,9 @@
 /run/verbose 2
+/testem/det/setMat Aluminium
+/testem/det/setLbin 1000 0.01
+/testem/det/setRbin 300 0.01
+/testem/phys/addPhysics emstandard_opt0
+/run/setCut 1.0 mm
 /run/initialize
 /control/execute vis.mac
 /control/verbose 2
@@ -16,7 +21,7 @@
 /vis/sceneHandler/attach
 /vis/viewer/set/viewpointThetaPhi 120. 140.
 /vis/viewer/zoom 1.1
-/vis/viewer/set/style surface
+/vis/viewer/set/style wireframe
 /vis/scene/add/trajectories smooth
 /tracking/storeTrajectory 2
 /vis/scene/notifyHandlers
@@ -33,7 +38,7 @@
 /vis/verbose warnings
 /analysis/setFileName mine
 /gun/particle e-
-/gun/energy 40 MeV
-/run/beamOn 100
+/gun/energy 100 MeV
+/run/beamOn 1
 /analysis/h1/getVector
 /analysis/h2/getVector
