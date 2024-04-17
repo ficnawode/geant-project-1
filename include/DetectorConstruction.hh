@@ -33,6 +33,7 @@
 #ifndef DetectorConstruction_h
 #define DetectorConstruction_h 1
 
+#include "G4Box.hh"
 #include "G4VUserDetectorConstruction.hh"
 #include "G4ThreeVector.hh"
 #include "G4Material.hh"
@@ -94,7 +95,7 @@ private:
   G4double fEcalLength = 0.;             //full length of the Calorimeter
   G4double fEcalRadius = 0.;             //radius  of the Calorimeter
 
-  G4Tubs*            fSolidEcal = nullptr;  //pointer to the solid calorimeter
+  G4Box*            fSolidEcal = nullptr;  //pointer to the solid calorimeter
   G4LogicalVolume*   fLogicEcal = nullptr;  //pointer to the logical calorimeter
   G4VPhysicalVolume* fPhysiEcal = nullptr;  //pointer to the physical calorimeter
 

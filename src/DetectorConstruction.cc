@@ -117,7 +117,8 @@ void DetectorConstruction::UpdateParameters()
   fEcalLength = fNLtot * fDLlength;
   fEcalRadius = fNRtot * fDRlength;
   if (fSolidEcal) {
-    fSolidEcal->SetOuterRadius(fEcalRadius);
+    fSolidEcal->SetXHalfLength(fEcalRadius);
+    fSolidEcal->SetYHalfLength(fEcalRadius);
     fSolidEcal->SetZHalfLength(0.5 * fEcalLength);
   }
 }
@@ -131,7 +132,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   // Ecal
   //
   if (!fPhysiEcal) {
-    fSolidEcal = new G4Tubs("Ecal", 0., fEcalRadius, 0.5 * fEcalLength, 0., 360 * deg);
+    fSolidEcal = new G4Box("Ecal", fEcalRadius, fEcalRadius, 0.5 * fEcalLength);
     fLogicEcal = new G4LogicalVolume(fSolidEcal, fMaterial, "Ecal", 0, 0, 0);
     fPhysiEcal = new G4PVPlacement(0, G4ThreeVector(), fLogicEcal, "Ecal", 0, false, 0);
   }

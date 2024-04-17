@@ -2,14 +2,12 @@
 /control/saveHistory
 /run/verbose 2
 /run/initialize
-/vis/open OGL
-/vis/drawVolume
-/vis/viewer/set/viewpointThetaPhi 120 150
-/vis/viewer/set/style surface
-/vis/scene/add/trajectories smooth
-/vis/modeling/trajectories/create/drawByCharge
-/vis/modeling/trajectories/drawByCharge-0/set 1 red
-/vis/modeling/trajectories/drawByCharge-0/set -1 blue
-/vis/modeling/trajectories/drawByCharge-0/set 0 green
-/run/beamOn 1
+
+/control/execute vis.mac
+/analysis/setFileName mine
+
+/gun/particle e-
+/gun/energy 40 MeV
+
+/run/beamOn 100
 
